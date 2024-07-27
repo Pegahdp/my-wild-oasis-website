@@ -1,7 +1,6 @@
 import Cabin from "@/app/_components/Cabin";
 import Reservation from "@/app/_components/Reservation";
 import Spinner from "@/app/_components/Spinner";
-import TextExpander from "@/app/_components/TextExpander";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
 
 import { Suspense } from "react";
@@ -23,9 +22,6 @@ export async function generateStaticParams() {
 }
 export default async function Page({ params }) {
   const cabin = await getCabin(params.cabinId);
-
-  const { id, name, maxCapacity, regularPrice, discount, image, description } =
-    cabin;
 
   return (
     <div className="max-w-6xl mx-auto mt-8">
